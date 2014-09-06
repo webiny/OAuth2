@@ -20,6 +20,7 @@
 		"php": ">=5.4.0",
 		"webiny/class-loader": "dev-master",
 		"webiny/config": "dev-master",
+		"webiny/http": "dev-master",
 		"webiny/std-lib": "dev-master",
 		"adoy/oauth2": "dev-master"
 	},
