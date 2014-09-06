@@ -23,6 +23,6 @@ OAuth2:
     # just ommit this definition in your config file.
     Bridge: \Webiny\Component\OAuth2\Bridge\OAuth2\OAuth2
     # Entries under ClassLoader are automatically registered
-    # with ClassLoader.
+    # with ClassLoader. You don't need this part if you are using Composer autoload.
     ClassLoader:
         OAuth2: /var/www/Vendors/OAuth2
