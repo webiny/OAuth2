@@ -17,5 +17,3 @@ OAuth2:
         Scope: openid%20profile%20email
         RedirectUri: /security/login-gp/
     Bridge: \Webiny\Component\OAuth2\Bridge\OAuth2\OAuth2
-    ClassLoader:
-        OAuth2: /var/www/projects/webiny/Vendors/OAuth2
