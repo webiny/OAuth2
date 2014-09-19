@@ -70,9 +70,10 @@ class OAuth2
 
         if (!self::isInstanceOf($instance, '\Webiny\Component\OAuth2\Bridge\OAuth2Interface')) {
             throw new Exception(Exception::MSG_INVALID_ARG, [
-                'driver',
-                '\Webiny\Component\OAuth2\Bridge\OAuth2Interface'
-            ]);
+                    'driver',
+                    '\Webiny\Component\OAuth2\Bridge\OAuth2Interface'
+                ]
+            );
         }
 
         if ($certificateFile != '') {

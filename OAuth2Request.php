@@ -95,7 +95,8 @@ class OAuth2Request
 
         if (!$requestType->equals('GET') && !$requestType->equals('POST')) {
             throw new OAuth2Exception('Invalid request type provided "' . $requestType->val() . '".
-										Possible values are GET and POST.');
+										Possible values are GET and POST.'
+            );
         }
 
         $this->_requestType = $requestType->val();
