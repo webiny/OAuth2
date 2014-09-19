@@ -222,7 +222,8 @@ class OAuth2User
         $gender = strtolower($gender);
 
         if ($gender != 'male' && $gender != 'female') {
-            throw new OAuth2Exception('Gender can be either "male" or "female", you tried to set it to "' . $gender . '".');
+            throw new OAuth2Exception('Gender can be either "male" or "female", you tried to set it to "' . $gender . '".'
+            );
         }
 
         $this->gender = $gender;

@@ -83,7 +83,8 @@ class OAuth2 extends OAuth2Abstract
     public function getAccessToken()
     {
         if ($this->_accessToken == '') {
-            throw new OAuth2Exception('Before you can get the access token, you first must request it from the OAuth2 server.');
+            throw new OAuth2Exception('Before you can get the access token, you first must request it from the OAuth2 server.'
+            );
         }
 
         return $this->_accessToken;
@@ -112,7 +113,8 @@ class OAuth2 extends OAuth2Abstract
     public function setCertificate($pathToCertificate)
     {
         $this->_pathToCertificate = $pathToCertificate;
-        $this->_instance = new Client($this->_clientId, $this->_clientSecret, Client::AUTH_TYPE_URI, $pathToCertificate);
+        $this->_instance = new Client($this->_clientId, $this->_clientSecret, Client::AUTH_TYPE_URI, $pathToCertificate
+        );
     }
 
     /**

@@ -48,7 +48,10 @@ class OAuth2Loader
         ) {
             $redirectUri = $oauth2Config->RedirectUri;
         } else {
-            $redirectUri = self::httpRequest()->getCurrentUrl(true)->setPath($oauth2Config->RedirectUri)->setQuery('')
+            $redirectUri = self::httpRequest()
+                               ->getCurrentUrl(true)
+                               ->setPath($oauth2Config->RedirectUri)
+                               ->setQuery('')
                                ->val();
         }
 
