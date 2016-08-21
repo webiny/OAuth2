@@ -9,7 +9,7 @@ namespace Webiny\Component\OAuth2\Server;
 
 use Webiny\Component\OAuth2\OAuth2Exception;
 use Webiny\Component\OAuth2\OAuth2User;
-use Webiny\Component\OAuth2\ServerAbstract;
+use Webiny\Component\OAuth2\AbstractServer;
 use Webiny\Component\StdLib\StdLibTrait;
 
 /**
@@ -17,7 +17,7 @@ use Webiny\Component\StdLib\StdLibTrait;
  *
  * @package         Webiny\Component\OAuth2\Server
  */
-class Facebook extends ServerAbstract
+class Facebook extends AbstractServer
 {
     use StdLibTrait;
 
@@ -109,7 +109,9 @@ class Facebook extends ServerAbstract
     {
         return [
             'url'    => self::API_ME,
-            'params' => []
+            'params' => [
+                'fields' => 'id,email,first_name,last_name,gender,link'
+            ]
         ];
     }
 
@@ -124,9 +126,9 @@ class Facebook extends ServerAbstract
      */
     public function processUserDetails($result)
     {
-        $result = self::arr($result['result']);
+        $result = $this->arr($result['result']);
         if ($result->keyExists('error')) {
-            throw new OAuth2Exception($result->key('error')['message']);
+            throw new OAuth2Exception($result->keyNested('error.message'));
         }
 
         $user = new OAuth2User($result->key('username', '', true), $result->key('email', '', true));

@@ -9,7 +9,7 @@ namespace Webiny\Component\OAuth2\Server;
 
 use Webiny\Component\OAuth2\OAuth2User;
 use Webiny\Component\OAuth2\OAuth2Exception;
-use Webiny\Component\OAuth2\ServerAbstract;
+use Webiny\Component\OAuth2\AbstractServer;
 use Webiny\Component\StdLib\StdLibTrait;
 
 /**
@@ -17,7 +17,7 @@ use Webiny\Component\StdLib\StdLibTrait;
  *
  * @package         Webiny\Component\OAuth2\Server
  */
-class Google extends ServerAbstract
+class Google extends AbstractServer
 {
 
     use StdLibTrait;
@@ -99,9 +99,9 @@ class Google extends ServerAbstract
      */
     protected function processUserDetails($result)
     {
-        $result = self::arr($result['result']);
+        $result = $this->arr($result['result']);
         if ($result->keyExists('error')) {
-            throw new OAuth2Exception($result->key('error'));
+            throw new OAuth2Exception($result->keyNested('error.message'));
         }
 
         $user = new OAuth2User($result->key('given_name'), $result->key('email', '', true));
