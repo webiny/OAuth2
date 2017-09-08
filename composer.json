@@ -21,14 +21,14 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=5.5.9",
-        "webiny/http": "~1.4",
-        "webiny/config": "~1.4",
-        "webiny/std-lib": "~1.4",
+        "php": "^7",
+        "webiny/http": "~1.5",
+        "webiny/config": "~1.5",
+        "webiny/std-lib": "~1.5",
         "league/oauth2-client": "0.8.*"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4",
+        "phpunit/phpunit": "~6",
         "mybuilder/phpunit-accelerator": "dev-master"
     },
     "suggest": {
@@ -41,7 +41,7 @@
     },
     "extras": {
         "branch-alias": {
-            "dev-master": "1.4-dev"
+            "dev-master": "1.5-dev"
         }
     }
 }
